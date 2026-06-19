@@ -26,11 +26,12 @@ function HomePage() {
           logout={() => setFakeToken(false)}
           login={manipularLoginButton}></MyHeader>
 
-    {/* <Link to='/registrar'>Cadastrar</Link>
-    <button className="logButton" onClick={() => {setShowPopUp(true)} } >{loginLabel}</button> */}
       </header>
     <aside className="sidebar">Menu Lateral</aside>
     <main className="content">
+    <Link to='/doces'>Catalogo</Link>
+    <Link to='/login'>Logar</Link>
+
     <PopUp showPopUp={showPopUp} closePopUp={()=>setShowPopUp(false)}>
             
             </PopUp>
