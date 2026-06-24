@@ -5,7 +5,12 @@ import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import PopUp from '../components/popUp.js';
 import { jwtDecode } from "jwt-decode";
-import MyHeader from "../components/header.js"
+import MyHeader from "../components/header.js";
+import logo from "../assets/SAEPSaude.png";
+import ttok from "../assets/tiktok.svg";
+import insta from "../assets/instagram.svg";
+import tuwit from "../assets/twitter.svg";
+import progres from "../assets/progresso.svg";
 
 function HomePage() {
   const [loginLabel, setLoginLabel] = useState("Login");
@@ -27,16 +32,26 @@ function HomePage() {
           login={manipularLoginButton}></MyHeader>
 
       </header>
-    <aside className="sidebar">Menu Lateral</aside>
+    <aside className="sidebar"> <img src={logo}/> 
+    <p> SAEPSaude</p> 
+    <button className='meusicones'><img src={progres}/>Atividades</button>
+    <div className='invisivel'></div>
+    <p>SAEPSaude</p>
+    <div className='meusicones'>
+      <img src={ttok}/>
+      <img src={insta}/>
+      <img src={tuwit}/>
+    </div>
+
+    </aside>
     <main className="content">
-    <Link to='/doces'>Catalogo</Link>
+    
     <Link to='/login'>Logar</Link>
 
     <PopUp showPopUp={showPopUp} closePopUp={()=>setShowPopUp(false)}>
             
             </PopUp>
  
-      {TextBox()}
       {PostBox("JUJUBA", user)}
       {PostBox("Frutas", "prefiro chocolate")}
       <div className="post">Post 3</div>
